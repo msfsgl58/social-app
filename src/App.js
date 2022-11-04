@@ -1,12 +1,14 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import LeftMenu from './menuFolder/left-menu'
+import RightMenu from './menuFolder/right-menu'
 
 function App() {
   return (
-    <div className='background'>
-    <div className='container'>
-      <h3 className='social-app'>Social APP</h3>
-    </div>
+    <div className="background">
+      <LeftMenu />
+      <div className="container"></div>
+      <RightMenu />
     </div>
   );
 }
