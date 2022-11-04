@@ -50,3 +50,32 @@
     width: 14%;
     margin: 10px;
   }
+
+  .nav-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px, 0px, 8px, 16px;
+    list-style: none;
+    height: 60px;
+  }
+
+  .nav-text a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px, 16px;
+    border-radius: 4px;
+  }
+
+  .nav-text a:hover {
+    background-color: white;
+  }
+
+  span {
+    margin-left: 16px;
+  }

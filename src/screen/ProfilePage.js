@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css'
-import LeftMenu from "./menuFolder/left-menu";
+import LeftMenu from "../menuFolder/left-menu";
 
 function ProfilePage() {
     return(

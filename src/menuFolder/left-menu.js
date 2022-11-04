@@ -1,5 +1,7 @@
 import React from "react";
 import "./menu.css"
+import {Link} from 'react-router-dom'
+import {LeftMenuData} from './left-menu-data'
 
 function LeftMenu() {
   return (
@@ -8,12 +10,17 @@ function LeftMenu() {
         <h3 className="social-app-text">Social APP</h3>
       </div>
       <div className="left-menu-button-div">
-        <p className="left-menu-button-item">Ana Sayfa</p>
-        <p className="left-menu-button-item">Ara</p>
-        <p className="left-menu-button-item">Oluştur</p>
-        <p className="left-menu-button-item">Profil</p>
-        <p className="left-menu-button-exit">Çıkış Yap</p>
-      </div>
+        {LeftMenuData.map((item,index) => {
+          return(
+            <li key={index} className={item.cName}>
+              <Link to={item.path}>
+                {item.icon}
+                <span>{item.title}</span>
+              </Link>
+            </li>
+          )
+        })}
+        </div>
     </div>
   );
 }

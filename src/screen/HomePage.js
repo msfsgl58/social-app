@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import LeftMenu from './menuFolder/left-menu'
-import RightMenu from './menuFolder/right-menu'
+import LeftMenu from '../menuFolder/left-menu'
+import RightMenu from '../menuFolder/right-menu'
 
 function HomePage() {
   return (

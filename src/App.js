@@ -1,8 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
 import {Routes, Route} from "react-router-dom"
-import HomePage from "./HomePage";
-import ProfilePage from './ProfilePage'
+import HomePage from "./screen/HomePage";
+import ProfilePage from "./screen/ProfilePage";
 
 function App() {
   return (
