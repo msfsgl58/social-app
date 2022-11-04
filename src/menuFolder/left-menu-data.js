@@ -29,7 +29,7 @@ export const LeftMenuData = [
   },
   {
     title: "Çıkış Yap",
-    path: "/",
+    path: "/Login",
     icon: <ImIcons.ImExit />,
     cName: "nav-text",
   },

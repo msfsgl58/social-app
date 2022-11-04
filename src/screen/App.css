@@ -19,3 +19,28 @@
   border-radius: 15px;
   margin: 10px;
 }
+
+.login-text {
+  margin-top: 8%;
+  bottom: 0px;
+}
+
+.form {
+  width: 30%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+label {
+  margin-top: 20px;
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.btn-submit {
+  background-color: aqua;
+  margin-top: 20px;
+}
