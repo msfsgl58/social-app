@@ -6,7 +6,7 @@ function ProfilePage() {
     return(
         <div className="background">
         <LeftMenu />
-        <div className="container"></div>
+        <div className="main"></div>
         </div>
     )
 }

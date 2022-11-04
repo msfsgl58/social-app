@@ -11,11 +11,11 @@
   justify-content: center;
 }
 
-.container {
+.main {
   background-color: whitesmoke;
   display: flex;
   height: 96%;
-  width: 72%;
+  width: 84%;
   border-radius: 15px;
   margin: 10px;
 }
