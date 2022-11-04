@@ -1,81 +1,81 @@
 .left-menu {
-    background-color: whitesmoke;
-    text-align: center;
-    flex-direction: column;
-    display: flex;
-    border-radius: 15px;
-    height: 96%;
-    width: 14%;
-    margin: 10px;
-  }
-  
-  .left-menu-button-div {
-    height: 80%;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .left-menu-button-item {
-    margin-top: 55px;
-    font-size: large;
-    font-weight: bolder;
-  }
-  
-  .left-menu-button-exit {
-    margin-top: auto;
-    font-size: large;
-    font-weight: bolder;
-  }
+  background-color: whitesmoke;
+  text-align: center;
+  flex-direction: column;
+  display: flex;
+  border-radius: 15px;
+  height: 96%;
+  width: 14%;
+  margin: 10px;
+}
 
-  .font-link {
-    font-family: 'Pacifico', cursive;
-  }
-  
-  .social-app-text {
-    font-family: 'Pacifico', cursive;
-    font-size: large;
-    margin: 20px;
-  }
-  
-  .social-app-div {
-    margin: 20px;
-  }
+.left-menu-button-div {
+  height: 80%;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
 
-  .right-menu {
-    background-color: whitesmoke;
-    text-align: center;
-    border-radius: 15px;
-    height: 96%;
-    width: 14%;
-    margin: 10px;
-  }
+.left-menu-button-item {
+  margin-top: 55px;
+  font-size: large;
+  font-weight: bolder;
+}
 
-  .nav-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8px, 0px, 8px, 16px;
-    list-style: none;
-    height: 60px;
-  }
+.left-menu-button-exit {
+  margin-top: auto;
+  font-size: large;
+  font-weight: bolder;
+}
 
-  .nav-text a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    width: 95%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0px, 16px;
-    border-radius: 4px;
-  }
+.font-link {
+  font-family: "Pacifico", cursive;
+}
 
-  .nav-text a:hover {
-    background-color: white;
-  }
+.social-app-text {
+  font-family: "Pacifico", cursive;
+  font-size: large;
+  margin: 20px;
+}
 
-  span {
-    margin-left: 16px;
-  }
+.social-app-div {
+  margin: 20px;
+}
+
+.right-menu {
+  background-color: whitesmoke;
+  text-align: center;
+  border-radius: 15px;
+  height: 96%;
+  width: 14%;
+  margin: 10px;
+}
+
+.nav-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px, 0px, 8px, 16px;
+  list-style: none;
+  height: 60px;
+}
+
+.nav-text a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0px, 16px;
+  border-radius: 4px;
+}
+
+.nav-text a:hover {
+  background-color: white;
+}
+
+span {
+  margin-left: 16px;
+}
