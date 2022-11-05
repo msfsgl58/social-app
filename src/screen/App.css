@@ -21,26 +21,36 @@
 }
 
 .login-text {
-  margin-top: 8%;
-  bottom: 0px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-family: "Pacifico", cursive;
 }
 
 .form {
   width: 30%;
   height: 40%;
-  display: flex;
+  display: grid;
   flex-direction: column;
   justify-content: center;
+  border-radius: 20px;
+}
+
+.form input {
+  border-radius: 10px;
 }
 
 label {
   margin-top: 20px;
   display: flex;
   font-size: 18px;
-  font-weight: bold;
+  font-family: "Pacifico", cursive;
 }
 
-.btn-submit {
-  background-color: aqua;
-  margin-top: 20px;
+.btn {
+  width: 200px;
+  margin: 20px;
+  border-width: 2px;
+  border-color: black;
+  border-radius: 10px;
+  font-family: "Pacifico", cursive;
 }

@@ -7,8 +7,12 @@ function LoginPage() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => console.log(data);
+   } = useForm();
+   const onSubmit = (data) => {
+    console.log(data.KullanıcıAdı)
+    console.log(data.Sifre)
+   }
+
 
   return (
     <div className="background">
@@ -30,12 +34,16 @@ function LoginPage() {
         <h4 className="login-text">Giriş Yap</h4>
         <form onSubmit={handleSubmit(onSubmit)} className="form">
           <label className="label">Kullanıcı Adı</label>
-          <input {...register("Kullanıcı Adı", { required: true })} />
+          <input {...register("KullanıcıAdı", { required: true })} />
           <label>Şifre</label>
-          <input {...register("Şifre", { required: true })} />
+          <input {...register("Sifre", { required: true })} />
           {errors.exampleRequired && <span>This field is required</span>}
-          <input type="submit" className="btn-submit"/>
+          <input type="submit" className="btn" value={"Giriş Yap"}/>
         </form>
+        <div>
+        <input type="submit" className="btn" value={"Şifremi Unuttum"} />
+        <input type="submit" className="btn" value={"Kayıt Ol"} />
+        </div>
       </div>
     </div>
   );
