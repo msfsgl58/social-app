@@ -1,8 +1,8 @@
+/* eslint-disable array-callback-return */
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import { useForm } from "react-hook-form";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
   useEffect(() => {
@@ -17,19 +17,10 @@ function LoginPage() {
   });
 
   const [user, setUser] = useState([]);
-  const [kAdı, setKAdı] = useState();
-  const [sifre, setSifre] = useState();
+  const [kAdı, setKAdı] = useState('');
+  const [sifre, setSifre] = useState('');
   const [logging, setLogging] = useState(false)
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => {
-    setKAdı(data.KullanıcıAdı);
-    setSifre(data.Sifre);
-  };
+  const navigate = useNavigate()
 
   const Login = () => { 
     user.some((item) => {
@@ -38,16 +29,15 @@ function LoginPage() {
         if (sifre === item.password) {
           setLogging(true)
           console.log("Giriş Başarılı.");
+          navigate('/')
           return logging === true;
         } else {
           console.log("Sifre Hatalı");
           alert('Şifre Hatalı')
-          return logging === false;
         }
       }
       else {
         console.log("Kullanıcı Adı Yok")
-        alert("Kullanıcı Adı Bulunamadı Lütfen Kayıt Olun")
       }
     });
   };
@@ -70,27 +60,17 @@ function LoginPage() {
         <h3 className="social-app-text">Social APP</h3>
 
         <h4 className="login-text">Giriş Yap</h4>
-        <form onSubmit={handleSubmit(onSubmit)} className="form">
+        <form className="form">
           <label className="label">Kullanıcı Adı</label>
-          <input {...register("KullanıcıAdı", { required: true })} />
+          <input type={"text"} onChange={e => setKAdı(e.target.value)} required={true} />
           <label>Şifre</label>
-          <input {...register("Sifre", { required: true })} />
-          {errors.exampleRequired && <span>This field is required</span>}
-          {logging === true ? <Link to={"/profil"}>
-          <input
+          <input type={"text"} onChange={e => setSifre(e.target.value)} required={true} />
+         <input
             type="submit"
             className="btn"
             value={"Giriş Yap"}
             onClick={() => Login()}
             />
-            </Link>
-            :<input
-            type="submit"
-            className="btn"
-            value={"Giriş Yap"}
-            onClick={() => Login()}
-            />}
-          
         </form>
         <div>
           <input type="submit" className="btn" value={"Şifremi Unuttum"} />

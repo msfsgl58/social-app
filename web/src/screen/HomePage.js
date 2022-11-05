@@ -6,7 +6,11 @@ function HomePage() {
   return (
     <div className="background">
       <LeftMenu />
-      <div className="main"></div>
+      <div className="main">
+        <div className="conatiner" style={{backgroundColor:'red'}}>
+
+        </div>
+      </div>
     </div>
   );
 }

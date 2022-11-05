@@ -7,8 +7,9 @@ import ProfilePage from "./screen/ProfilePage";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/profil" element={<ProfilePage />} />
+      <Route path="/" element={<HomePage/>} />
+      <Route path="/Home" element={<HomePage />} />
+      <Route path="/Profil" element={<ProfilePage />} />
       <Route path="/Login" element={<LoginPage />} />
     </Routes>
   );
