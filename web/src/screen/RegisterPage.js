@@ -4,7 +4,7 @@ import "./App.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function LoginPage() {
+function RegisterPage() {
   useEffect(() => {
     axios
       .get("http://192.168.1.106:3100/user")
@@ -19,27 +19,32 @@ function LoginPage() {
   const [user, setUser] = useState([]);
   const [kAdı, setKAdı] = useState('');
   const [sifre, setSifre] = useState('');
-  const [logging, setLogging] = useState(false)
+  const [register, setRegister] = useState(false)
   const navigate = useNavigate()
 
-  const Login = () => { 
+  const Register = () => { 
     user.some((item) => {
       if (kAdı === item.kadı) {
-        console.log("Kullanıcı Adı Bulundu.");
-        if (sifre === item.password) {
-          setLogging(true)
-          console.log("Giriş Başarılı.");
-          navigate('/')
-          return logging === true;
-        } else {
-          console.log("Sifre Hatalı");
-          alert('Şifre Hatalı')
-        }
+       alert('Bu Kullanıcı Adı Kullanılıyor')
+      }
+      else if(kAdı === '' && sifre === '') {
+        alert("Lütfen Boş Seçenek Bırakmayın")
       }
       else {
-        console.log("Kullanıcı Adı Yok")
+        axios.post("http://192.168.1.106:3100/user",{
+            kadı:kAdı,
+            password:sifre
+        })
+        .then((result) => {
+            console.log(result,'Kayıt Başarılı Şekilde Yapıldı.')
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+        return register === false
       }
     });
+    navigate('/Login')
   };
 
   return (
@@ -59,7 +64,7 @@ function LoginPage() {
       >
         <h3 className="social-app-text">Social APP</h3>
 
-        <h4 className="login-text">Giriş Yap</h4>
+        <h4 className="login-text">Kayıt Ol</h4>
         <form className="form">
           <label className="label">Kullanıcı Adı</label>
           <input type={"text"} onChange={e => setKAdı(e.target.value)} required={true} />
@@ -68,17 +73,13 @@ function LoginPage() {
          <input
             type="submit"
             className="btn"
-            value={"Giriş Yap"}
-            onClick={() => Login()}
+            value={"Kayıt Ol"}
+            onClick={() => Register()}
             />
         </form>
-        <div>
-          <input type="submit" className="btn" value={"Şifremi Unuttum"} />
-          <input type="submit" className="btn" value={"Kayıt Ol"} onClick={() => navigate('/register')} />
-        </div>
       </div>
     </div>
   );
 }
 
-export default LoginPage;
+export default RegisterPage;
