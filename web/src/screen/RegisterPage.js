@@ -19,7 +19,7 @@ function RegisterPage() {
   const [user, setUser] = useState([]);
   const [kAdı, setKAdı] = useState('');
   const [sifre, setSifre] = useState('');
-  const [register, setRegister] = useState(false)
+  const [register] = useState(false)
   const navigate = useNavigate()
 
   const Register = () => { 
