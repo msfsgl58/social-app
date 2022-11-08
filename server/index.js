@@ -1,10 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const User = require("./models/userSchema.js");
+const dotenv = require("dotenv")
+dotenv.config();
 
 mongoose
   .connect(
-    "mongodb+srv://msfsgl58:msf123456@cluster0.qcxgovx.mongodb.net/SocialAPP"
+    `${process.env.MONGO_URL}`
   )
   .then((res) => {
     console.log("baglantı kuruldu");
