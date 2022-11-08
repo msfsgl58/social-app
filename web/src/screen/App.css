@@ -13,10 +13,34 @@
 
 .main {
   background-color: whitesmoke;
-  display: flex;
+  position: relative;
   height: 96%;
   width: 84%;
   border-radius: 15px;
+  margin: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+
+.main-inside {
+  width: 100%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-card {
+  border-width:2px;
+  border-color:black;
+  border-style:outset;
+  border-radius:20px;
+  width: 500px;
+  height: 500px;
   margin: 10px;
 }
 

@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const User = require("./models/userSchema.js");
+const Post = require("./models/postSchema.js")
+const multer = require("multer")
 const dotenv = require("dotenv")
 dotenv.config();
 
