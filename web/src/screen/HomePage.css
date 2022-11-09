@@ -1,0 +1,29 @@
+.post-card {
+    border-width:2px;
+    border-color:black;
+    border-style:outset;
+    border-radius:20px;
+    width: 500px;
+    height: 500px;
+    margin: 10px;
+}
+
+.inside-profile-picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin: 16px;
+}
+
+.inside-profile-text {
+    font-size: 26px;
+    font-family: "Pacifico", cursive;
+    margin-top: 25px;
+}
+
+.post {
+    margin: 10px;
+    width: 96%;
+    height: 390px;
+    border-radius: 20px;
+}
