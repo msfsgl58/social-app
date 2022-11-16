@@ -91,12 +91,7 @@ server.post("/post", upload.single("post"), (req, res) => {
   res.send("image is saved");
 });
 
-server.get("/post", (req, res) => {
-  Post.find()
-    .then((result) => {
-      res.send(result);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+server.get("/post",async (req, res) => {
+  const allPost = await Post.find()
+  res.json(allPost)
 });
