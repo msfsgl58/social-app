@@ -1,16 +1,16 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const User = require("./models/userSchema.js");
-const Post = require("./models/postSchema.js")
-const multer = require("multer")
-const dotenv = require("dotenv")
+const Post = require("./models/postSchema.js");
+const multer = require("multer");
+const dotenv = require("dotenv");
 dotenv.config();
-const bodyParser = require('body-parser')
+const bodyParser = require("body-parser");
+const fs = require("fs");
+const path = require("path");
 
 mongoose
-  .connect(
-    `${process.env.MONGO_URL}`
-  )
+  .connect(`${process.env.MONGO_URL}`)
   .then((res) => {
     console.log("baglantı kuruldu");
   })
@@ -44,19 +44,59 @@ server.post("/user", (req, res) => {
   newUser
     .save()
     .then((result) => {
-      console.log(result,'Başarılı Şekilde Kaydedildi');
+      console.log(result, "Başarılı Şekilde Kaydedildi");
     })
     .catch((err) => {
       console.log(err);
     });
 });
 
-server.get('/user',(req,res) => {
-    User.find()
+server.get("/user", (req, res) => {
+  User.find()
     .then((result) => {
-        res.send(result)
+      res.send(result);
     })
     .catch((err) => {
-        console.log(err)
+      console.log(err);
+    });
+});
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "uploads");
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  },
+});
+
+const upload = multer({ storage: storage });
+
+server.post("/post", upload.single("post"), (req, res) => {
+  const savepost = new Post({
+    name: req.body.name,
+    img: {
+      data: fs.readFileSync("uploads/" + req.file.filename),
+      contentType: "image/png",
+    },
+  });
+  savepost
+    .save()
+    .then((res) => {
+      console.log("kaydedildi");
     })
-})
+    .catch((err) => {
+      console.log(err);
+    });
+  res.send("image is saved");
+});
+
+server.get("/post", (req, res) => {
+  Post.find()
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
