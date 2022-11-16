@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 const post = new Schema({
     postUser:{
         type: String,
-        require: true
+        require: false
     },
     photo:{
         data: Buffer,

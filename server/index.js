@@ -5,6 +5,7 @@ const Post = require("./models/postSchema.js")
 const multer = require("multer")
 const dotenv = require("dotenv")
 dotenv.config();
+const bodyParser = require('body-parser')
 
 mongoose
   .connect(
@@ -18,8 +19,8 @@ mongoose
   });
 
 const server = express();
-server.use(express.json());
-server.use(express.urlencoded({ extended: false }));
+server.use(bodyParser.json());
+server.use(bodyParser.urlencoded({ extended: false }));
 
 server.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
