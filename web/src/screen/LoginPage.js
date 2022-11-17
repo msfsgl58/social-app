@@ -4,8 +4,10 @@ import "./App.css";
 import "./LoginPage.css"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import {usernameEkle} from "../actions/index" 
+import { connect } from "react-redux";
 
-function LoginPage() {
+const LoginPage = (props) => {
   useEffect(() => {
     axios
       .get("http://192.168.1.106:3100/user")
@@ -30,6 +32,7 @@ function LoginPage() {
         if (sifre === item.password) {
           setLogging(true)
           console.log("Giriş Başarılı.");
+          props.usernameEkle(kAdı)
           navigate('/Home')
           return logging === true;
         } else {
@@ -42,6 +45,8 @@ function LoginPage() {
       }
     });
   };
+
+  console.log(props.state)
 
   return (
     <div className="background">
@@ -82,4 +87,10 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+const mapStateToProps = state => {
+  return {
+    state: state
+  }
+}
+
+export default connect(mapStateToProps,{usernameEkle}) (LoginPage);

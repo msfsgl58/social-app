@@ -5,9 +5,11 @@ import "./HomePage.css"
 import LeftMenu from "../menuFolder/left-menu";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import {connect} from 'react-redux'
 
-function HomePage() {
+const HomePage = (props) => {
 
+  console.log(props.state)
   const [data, setData] = useState([])
 
   useEffect(() => {
@@ -50,4 +52,11 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+const mapStateToProps = state => {
+  return {
+    state : state
+  }
+}
+
+
+export default connect(mapStateToProps)(HomePage);
