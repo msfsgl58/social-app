@@ -33,7 +33,7 @@ function HomePage() {
             );
             return(
               <div className="post-card" key={item._id}>
-                <div style={{flexdirection:'row',display:'flex'}}>
+                <div className="post-header">
                 <img src={require("../asd.jpeg")} className="inside-profile-picture" /> 
                 <p className="inside-profile-text">msfsgl58</p>
               </div>

@@ -5,7 +5,7 @@ import * as ImIcons from "react-icons/im";
 export const LeftMenuData = [
   {
     title: "Ana Sayfa",
-    path: "/",
+    path: "/Home",
     icon: <AiIcons.AiFillHome />,
     cName: "nav-text",
   },

@@ -3,8 +3,8 @@
     border-color:black;
     border-style:outset;
     border-radius:20px;
-    width: 500px;
-    height: 500px;
+    width: 33%;
+    height: 33%;
     margin: 10px;
 }
 
@@ -26,4 +26,10 @@
     width: 96%;
     height: 390px;
     border-radius: 20px;
+}
+
+.post-header {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
 }

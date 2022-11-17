@@ -30,7 +30,7 @@ function LoginPage() {
         if (sifre === item.password) {
           setLogging(true)
           console.log("Giriş Başarılı.");
-          navigate('/')
+          navigate('/Home')
           return logging === true;
         } else {
           console.log("Sifre Hatalı");
