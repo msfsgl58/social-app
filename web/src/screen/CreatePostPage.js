@@ -49,6 +49,7 @@ const CreatePostPage = (props) => {
             <form>
               <input
                 type={"file"}
+                accept={"image/png"}
                 onChange={(e) => setPostImage(e.target.files[0])}
               />
             </form>

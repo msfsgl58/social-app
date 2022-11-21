@@ -9,8 +9,9 @@ import {connect} from 'react-redux'
 
 const HomePage = (props) => {
 
-  console.log(props.state)
+  //console.log(props.state)
   const [data, setData] = useState([])
+  // console.log(data)
 
   useEffect(() => {
     axios
@@ -37,7 +38,7 @@ const HomePage = (props) => {
               <div className="post-card" key={item._id}>
                 <div className="post-header">
                 <img src={require("../asd.jpeg")} className="inside-profile-picture" /> 
-                <p className="inside-profile-text">msfsgl58</p>
+                <p className="inside-profile-text">{item.name}</p>
               </div>
               <div>
               <img src={`data:image/png;base64,${base64String}`} className='post' />
