@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import "./CreatePostPage.css";
 import LeftMenu from "../menuFolder/left-menu";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { BiAddToQueue } from "react-icons/bi";
