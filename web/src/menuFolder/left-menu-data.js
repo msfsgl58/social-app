@@ -17,7 +17,7 @@ export const LeftMenuData = [
   },
   {
     title: "Oluştur",
-    path: "/",
+    path: "/NewPost",
     icon: <AiIcons.AiOutlinePlusCircle />,
     cName: "nav-text",
   },

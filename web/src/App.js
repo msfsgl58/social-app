@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route, Navigate } from "react-router-dom";
+import CreatePostPage from "./screen/CreatePostPage";
 import HomePage from "./screen/HomePage";
 import LoginPage from "./screen/LoginPage";
 import ProfilePage from "./screen/ProfilePage";
@@ -14,6 +15,7 @@ function App() {
       <Route path="/Profil" element={<ProfilePage />} />
       <Route path="/Login" element={<LoginPage />} />
       <Route path="/Register" element={<RegisterPage />} />
+      <Route path="/NewPost" element={<CreatePostPage />} />
     </Routes>
   );
 }
