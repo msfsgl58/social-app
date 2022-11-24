@@ -95,3 +95,7 @@ server.get("/post",async (req, res) => {
   const allPost = await Post.find()
   res.json(allPost)
 });
+
+server.get('/post/:name',(req,res) => {
+  Post.find({name: req.params.name}).then((result) => res.send(result)).catch((err) => console.log(err))
+})
