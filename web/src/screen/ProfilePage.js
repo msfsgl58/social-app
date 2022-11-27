@@ -9,6 +9,9 @@ import axios from "axios";
 const ProfilePage = (props) => {
 
   const [photo, setPhoto] = useState([])
+  const [users, setUsers] = useState([])
+  const [name, setName] = useState()
+  const [surname, setSurname] = useState()
 
   useEffect(() => {
     axios
@@ -19,7 +22,22 @@ const ProfilePage = (props) => {
       .catch((err) => {
         console.log(err);
       });
+
+    users.map((item) => {
+      if(item.kadı === props.state.username){
+         setName(item.name)
+         setSurname(item.surname)
+      }
+    })
   });
+
+  useEffect(() => {
+    axios.get('http://192.168.1.106:3100/user')
+    .then((res) => {
+      setUsers(res.data)
+    })
+    .catch((err) => console.log(err))
+  },[])
 
   return (
     <div className="background">
@@ -30,7 +48,13 @@ const ProfilePage = (props) => {
         <div className="profile-inside">
           <div className="profile-inside-up">
         <img src={(require("../asd.jpeg"))} className="profile-picture" />
+        <div style={{flexDirection:'column'}}>
         <p className="profile-name">{props.state.username}</p>
+        <div style={{flexDirection:'row',display:'flex',margin:'30px'}}>
+          <p className="name">{name}</p>
+          <p className="surname">{surname}</p>
+        </div>
+        </div>
         </div>
         <div className="profile-inside-down">
           {

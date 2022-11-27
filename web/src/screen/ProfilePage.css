@@ -32,9 +32,18 @@
     margin-top: 50px;
 }
 
-.photo{
+.photo {
     width: 300px;
     height: 500px;
     border-radius: 20px;
     margin: 20px;
+}
+
+.name {
+  font-family: "Pacifico", cursive;
+  margin-right: 5px;
+}
+
+.surname {
+  font-family: "Pacifico", cursive;
 }

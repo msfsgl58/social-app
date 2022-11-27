@@ -20,6 +20,9 @@ function RegisterPage() {
   const [user, setUser] = useState([]);
   const [kAdı, setKAdı] = useState('');
   const [sifre, setSifre] = useState('');
+  const [name, setName] = useState('');
+  const [surname, setSurname] = useState('');
+  const [profilePicture, setProfilePicture] = useState(null);
   const [register] = useState(false)
   const navigate = useNavigate()
 
@@ -34,7 +37,10 @@ function RegisterPage() {
       else {
         axios.post("http://192.168.1.106:3100/user",{
             kadı:kAdı,
-            password:sifre
+            password:sifre,
+            name:name,
+            surname:surname,
+            profilePicture:profilePicture
         })
         .then((result) => {
             console.log(result,'Kayıt Başarılı Şekilde Yapıldı.')
@@ -69,14 +75,28 @@ function RegisterPage() {
         <form className="form">
           <label className="label">Kullanıcı Adı</label>
           <input type={"text"} onChange={e => setKAdı(e.target.value)} required={true} />
-          <label>Şifre</label>
+          <label className="label">Şifre</label>
           <input type={"text"} onChange={e => setSifre(e.target.value)} required={true} />
+          <label className="label">İsim</label>
+          <input type={"text"} onChange={e => setName(e.target.value)} required={true} />
+          <label className="label">Soyisim</label>
+          <input type={"text"} onChange={e => setSurname(e.target.value)} required={true} />
+          <div>
+          <label className="label">Profil Resmi</label>
+          <input 
+                type={"file"}
+                accept={"image/png"}
+                onChange={(e) => setProfilePicture(e.target.files[0])}
+                />
+          </div>
+          <div style={{marginTop:'10px',}}>
          <input
             type="submit"
             className="btn"
             value={"Kayıt Ol"}
             onClick={() => Register()}
             />
+          </div>
         </form>
       </div>
     </div>

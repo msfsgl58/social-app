@@ -40,6 +40,9 @@ server.post("/user", (req, res) => {
   const newUser = new User({
     kadı: `${req.body.kadı}`,
     password: `${req.body.password}`,
+    name: `${req.body.name}`,
+    surname: `${req.body.surname}`,
+    profilePicture: `${req.body.profilePicture}`
   });
   newUser
     .save()

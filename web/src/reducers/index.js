@@ -11,7 +11,6 @@ export const reducer = (state = INITAL_STATE, action) => {
                 id:1,
                 username:action.payload
             }
-            break;
         default:
             break;
     }
