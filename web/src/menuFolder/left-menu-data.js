@@ -9,12 +9,12 @@ export const LeftMenuData = [
     icon: <AiIcons.AiFillHome />,
     cName: "nav-text",
   },
-  {
-    title: "Ara",
-    path: "/",
-    icon: <AiIcons.AiOutlineSearch />,
-    cName: "nav-text",
-  },
+  // {
+  //   title: "Ara",
+  //   path: "/",
+  //   icon: <AiIcons.AiOutlineSearch />,
+  //   cName: "nav-text",
+  // },
   {
     title: "Oluştur",
     path: "/NewPost",
