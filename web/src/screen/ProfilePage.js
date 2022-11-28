@@ -23,6 +23,7 @@ const ProfilePage = (props) => {
         console.log(err);
       });
 
+    // eslint-disable-next-line array-callback-return
     users.map((item) => {
       if(item.kadı === props.state.username){
          setName(item.name)
