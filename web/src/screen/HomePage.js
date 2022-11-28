@@ -38,7 +38,7 @@ const HomePage = (props) => {
               <div className="post-card" key={item._id}>
                 <div className="post-header">
                 <img src={require("../asd.jpeg")} className="inside-profile-picture" /> 
-                <p className="inside-profile-text">{item.name}</p>
+                <p className="inside-profile-text">{item.user}</p>
               </div>
               <div>
               <img src={`data:image/png;base64,${base64String}`} className='post' />

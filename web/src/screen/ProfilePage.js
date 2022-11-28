@@ -64,7 +64,7 @@ const ProfilePage = (props) => {
                 String.fromCharCode(...new Uint8Array(item.img.data.data))
                );
               return(
-                <img src={`data:image/png;base64,${base64String}`} className='photo' />
+                <img src={`data:image/png;base64,${base64String}`} className='photo' key={item._id} />
               )
             })
           }
