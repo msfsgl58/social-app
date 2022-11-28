@@ -12,6 +12,8 @@ const ProfilePage = (props) => {
   const [users, setUsers] = useState([])
   const [name, setName] = useState()
   const [surname, setSurname] = useState()
+  const [modal, setModal] = useState(false)
+  const [modalID, setModalID] = useState()
 
   useEffect(() => {
     axios
@@ -40,6 +42,13 @@ const ProfilePage = (props) => {
     .catch((err) => console.log(err))
   },[])
 
+
+  const deletePhoto = (modalID) => {
+    axios.delete(`http://192.168.1.106:3100/post/${modalID}`).then((response) => {console.log(response)}).catch((err) => {console.log(err)})
+    console.log('first')
+  }
+
+
   return (
     <div className="background">
       <LeftMenu />
@@ -64,11 +73,25 @@ const ProfilePage = (props) => {
                 String.fromCharCode(...new Uint8Array(item.img.data.data))
                );
               return(
-                <img src={`data:image/png;base64,${base64String}`} className='photo' key={item._id} />
+                <img src={`data:image/png;base64,${base64String}`} className='photo' key={item._id} onClick={() => {setModalID(item._id);setModal(true);}} />
               )
             })
           }
-          
+
+          {modal === true ?
+          <div className="modal-main"> 
+          <div style={{display:'flex',flexDirection:'row',width:'100%',margin:'10px'}}>
+            <label style={{flex:'12',fontSize:'23px'}}>RESMİ SİL</label>
+            <label style={{flex:'1', fontSize:'23px'}} onClick={() => setModal(false)}>X</label>
+          </div>
+          <div style={{display:'flex',alignItems:"center",justifyContent:"center",height:'31.25rem'}}>
+            <img src={(require("../asd.jpeg"))} style={{width:'31.25rem',height:'31.25rem',borderRadius:'20px'}} />
+          </div>
+          <div style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
+            <label onClick={() => deletePhoto(modalID)}>SİL</label>
+          </div>
+          </div> 
+          :null}
         </div>
           </div>
       </div>

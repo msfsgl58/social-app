@@ -47,3 +47,14 @@
 .surname {
   font-family: "Pacifico", cursive;
 }
+
+.modal-main {
+  width: 65%;
+  height: 72%;
+  display: flex;
+  position: absolute;
+  top: 28%;
+  flex-direction: column;
+  background-color:DarkTurquoise ;
+  border-radius: 20px;
+}

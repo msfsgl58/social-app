@@ -102,3 +102,7 @@ server.get("/post",async (req, res) => {
 server.get('/post/:name',(req,res) => {
   Post.find({name: req.params.name}).then((result) => res.send(result)).catch((err) => console.log(err))
 })
+
+server.delete('/post/:_id',(req,res) => {
+   Post.findByIdAndDelete({_id:req.params._id}).then((result) => res.send(result)).catch((err) => console.log(err))
+})
