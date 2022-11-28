@@ -10,6 +10,7 @@ import { BiAddToQueue } from "react-icons/bi";
 
 const CreatePostPage = (props) => {
   const [postImage, setPostImage] = useState(null);
+  const [succes, setSucces] = useState(false)
 
   // console.log(props.state)
   // console.log(postImage)
@@ -25,6 +26,7 @@ const CreatePostPage = (props) => {
         .post("http://192.168.1.106:3100/post", formData)
         .then((result) => {
           console.log("başarılı" + result);
+          setSucces(true)
         })
         .catch((err) => {
           console.log(err);
@@ -36,6 +38,14 @@ const CreatePostPage = (props) => {
     <div className="background">
       <LeftMenu />
       <div className="main">
+        {succes === true ?
+        <div style={{backgroundColor:'DarkTurquoise',position:'absolute',width:'50%',height:'50%',alignItems:"center",justifyContent:"center",display:"flex",marginLeft:'25%',marginTop:'16%',borderRadius:'20px'}}>
+          <div style={{position:'absolute',top:'0px',right:'16px'}}>
+            <label onClick={() => setSucces(false)}>X</label>
+          </div>
+          <label style={{fontSize:'26px'}}>Resminiz Başarı İle Yüklendi</label>
+        </div> 
+          :null}
         <div className="AddIconDiv">
           <button
             className="AddIconButton"
@@ -45,6 +55,7 @@ const CreatePostPage = (props) => {
           >
             <BiAddToQueue className="AddIcon" />
           </button>
+          <label>Resminizi Seçtikten Sonra Üstteki Butona Basarak Yayınlayabilirsiniz</label>
           <div className="InputDiv">
             <form>
               <input
