@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 const post = new Schema({
-    name: String,
+    user: String,
     img:{
         data: Buffer,
         contentType: String

@@ -19,7 +19,7 @@ const CreatePostPage = (props) => {
       alert("Resim Seçilmedi");
     } else {
       const formData = new FormData();
-      formData.append("name", props.state.username);
+      formData.append("user", props.state.username);
       formData.append("post", postImage);
       axios
         .post("http://192.168.1.106:3100/post", formData)
